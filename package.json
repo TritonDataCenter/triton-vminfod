@@ -12,7 +12,8 @@
     "macaddr": "0.0.1",
     "posix-getopt": "1.2.0",
     "sprintf-js": "^1.1.2",
-    "vasync": "2.2.0"
+    "vasync": "2.2.0",
+    "vmadm": "joyent/node-vmadm#linuxcn"
   },
   "devDependencies": {
     "nodeunit-plus": "0.0.1",
