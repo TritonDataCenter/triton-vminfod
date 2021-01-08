@@ -1,0 +1,26 @@
+#
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+#
+
+#
+# Copyright 2020 Joyent, Inc.
+#
+
+#
+# This file is delivered as part of the Triton Platform Image.
+#
+[Unit]
+Description=Triton vminfod-agent used to cache local instances.
+Documentation=https://github.com/joyent/linux-live/tree/linuxcn
+After=network.target
+
+[Service]
+EnvironmentFile=/usr/triton/config/systemd.env
+Type=simple
+# Note that TRITON_AGENT_NODE_DIR is set in the EnvironmentFile.
+ExecStart=/usr/node/bin/node --abort_on_uncaught_exception ${TRITON_AGENT_NODE_DIR}/vminfod-agent/sbin/vminfod.js
+
+[Install]
+WantedBy=multi-user.target
